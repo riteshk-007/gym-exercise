@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <div className="w-screen bg-gray-200">
+    <div className="bg-gray-200">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
