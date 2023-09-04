@@ -17,7 +17,7 @@ function Home() {
       <Exercise
         setExercises={setExercises}
         bodyPart={bodyPart}
-        setBodyPart={setBodyPart}
+        exercises={exercises}
       />
     </div>
   );

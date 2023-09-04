@@ -40,9 +40,9 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
       padding="5px"
       textAlign="center"
     >
-      <h3 className="text-md font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-black">
+      <span className="text-md font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-black">
         {item}
-      </h3>
+      </span>
     </Typography>
   </Stack>
 );
