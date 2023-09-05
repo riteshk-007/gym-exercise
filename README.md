@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Gym Exercise Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Website Preview](https://github.com/riteshk-007/gym-exercise/raw/main/public/images/website-preview.png)
 
-## Available Scripts
+Welcome to the Gym Exercise website! This is a web application built using React.js that provides users with a platform to discover and learn various gym exercises. Whether you're a fitness enthusiast looking to diversify your workout routine or a beginner just starting your fitness journey, this website has something for everyone.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Exercise Catalog**: Browse through a comprehensive catalog of gym exercises, each with detailed descriptions and visual representations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Exercise Search**: Easily search for specific exercises using the search bar. Find exercises that target specific muscle groups or fitness goals.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User-Friendly Interface**: The website is designed with a clean and intuitive user interface to make navigation a breeze.
 
-### `npm test`
+- **Exercise Details**: Click on an exercise to view detailed information, including step-by-step instructions and images to help you perform the exercise correctly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Favorites**: Mark exercises as favorites to quickly access your preferred workouts.
 
-### `npm run build`
+- **Responsive Design**: The website is responsive and works well on both desktop and mobile devices, ensuring a consistent user experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone this repository to your local machine:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/riteshk-007/gym-exercise.git
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   cd gym-exercise
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install the required dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+4. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   This will launch the website in your default web browser at `http://localhost:3000`.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions to this project are welcome! If you'd like to contribute, please follow these guidelines:
 
-### Analyzing the Bundle Size
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/c4c9d028-515c-420b-9d8c-e7714c569dae)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the repository.
 
-### Making a Progressive Web App
+2. Create a new branch for your feature or bug fix:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   git checkout -b feature-name
+   ```
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/17c80fb8-8443-460a-a392-34795c681bec)
 
-### Advanced Configuration
+3. Make your changes and commit them:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   git commit -m "Add your message here"
+   ```
 
-### Deployment
+4. Push your changes to your fork:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   git push origin feature-name
+   ```
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/905a2030-0761-4bbd-bbb9-a255be214e92)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Create a pull request to merge your changes into the main repository.
+
+Please make sure to follow the [code of conduct](CODE_OF_CONDUCT.md) and adhere to best practices when contributing.
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/b5f075be-6506-4908-86ac-65e9d8514b30)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/f7c5afba-8ded-4ba4-84eb-31b00508a6cf)
+
+
+If you have any questions or need further assistance, feel free to contact the project owner:
+
+- **Ritesh Kumar**
+- GitHub: [riteshk-007](https://github.com/riteshk-007)
+
+Thank you for visiting the Gym Exercise website repository! We hope you find it useful for your fitness journey.
