@@ -1,6 +1,5 @@
 # Gym Exercise Website
-
-![Website Preview](https://github.com/riteshk-007/gym-exercise/raw/main/public/images/website-preview.png)
+![image](https://github.com/riteshk-007/gym-exercise/assets/135107962/3d90de86-15b5-43ac-a515-c885e1eea985)
 
 Welcome to the Gym Exercise website! This is a web application built using React.js that provides users with a platform to discover and learn various gym exercises. Whether you're a fitness enthusiast looking to diversify your workout routine or a beginner just starting your fitness journey, this website has something for everyone.
 
