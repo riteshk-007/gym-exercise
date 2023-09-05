@@ -1,38 +1,24 @@
 import React from "react";
-import { Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => (
-  <Stack
+  <button
     type="button"
-    alignItems="center"
-    justifyContent="center"
-    sx={
-      bodyPart === item
-        ? {
-            borderTop: "4px solid #FF2625",
-            background: "#fff",
-            borderRadius: "10px",
-            width: "110px",
-            height: "100px",
-            cursor: "pointer",
-            display: "flex",
-            borderBottom: "4px solid #FF2625",
-          }
-        : {
-            background: "#fff",
-            borderRadius: "10px",
-            width: "110px",
-            height: "100px",
-            cursor: "pointer",
-            display: "flex",
-          }
-    }
     onClick={() => {
       setBodyPart(item);
-      // window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
+    }}
+    style={{
+      background: "#fff",
+      borderRadius: "10px",
+      width: "110px",
+      height: "100px",
+      cursor: "pointer",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      border: bodyPart === item ? "4px solid #FF2625" : "none",
     }}
   >
-    {/* <img src="/gym.png" alt="dumbbell" style={{ height: "80px" }} /> */}
     <Typography
       fontWeight="bold"
       fontFamily="inherit"
@@ -44,7 +30,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
         {item}
       </span>
     </Typography>
-  </Stack>
+  </button>
 );
 
 export default BodyPart;

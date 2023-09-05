@@ -2,38 +2,43 @@ import React, { useEffect, useState } from "react";
 import { exercisesOptions, fetchData } from "../utils/FetchData";
 import ExercisesCard from "./ExercisesCard";
 import { Pagination, Stack } from "@mui/material";
-function Exercise({ setExercises, bodyPart, exercises }) {
-  const [currentPage, setCurentPage] = useState(1);
-  const exercisesPerPage = 12;
 
+function Exercise({ setExercises, bodyPart, exercises }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const exercisesPerPage = 12;
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      try {
+        let exercisesData = [];
+        if (bodyPart === "all") {
+          exercisesData = await fetchData(
+            "https://exercisedb.p.rapidapi.com/exercises",
+            exercisesOptions
+          );
+        } else {
+          exercisesData = await fetchData(
+            `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+            exercisesOptions
+          );
+        }
+        setExercises(exercisesData);
+      } catch (error) {
+        console.error("Error fetching exercises data:", error);
+      }
+    };
+
+    fetchExercisesData();
+  }, [bodyPart, setExercises]);
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(
+  const currentExercises = exercises?.slice(
     indexOfFirstExercise,
     indexOfLastExercise
   );
   const paginate = (e, value) => {
-    setCurentPage(value);
-    window.scrollTo({ top: 1330, behavior: "smooth" });
+    setCurrentPage(value);
+    window.scrollTo({ top: 1250, behavior: "smooth" });
   };
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      let exercisesData = [];
-      if (bodyPart === "all") {
-        exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises",
-          exercisesOptions
-        );
-      } else {
-        exercisesData = await fetchData(
-          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
-          exercisesOptions
-        );
-      }
-      setExercises(exercisesData);
-    };
-    fetchExercisesData();
-  }, [bodyPart, setExercises]);
   return (
     <div className="flex md:w-4/5 items-center md:items-start justify-center md:justify-start flex-col m-auto">
       <p className="font-bold uppercase text-4xl">Showing Results</p>
@@ -44,7 +49,7 @@ function Exercise({ setExercises, bodyPart, exercises }) {
       </div>
       <div className="w-full m-auto">
         <Stack mt="50px" mb="20px" alignItems="center">
-          {exercises.length > 9 && (
+          {exercises?.length > 9 && (
             <Pagination
               color="standard"
               shape="rounded"

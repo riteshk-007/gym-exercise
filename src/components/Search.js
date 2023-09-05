@@ -8,37 +8,52 @@ function Search({ setExercises, setBodyPart, bodyPart }) {
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
-    const fetchExercisesData = async () => {
-      const bodyPartData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-        exercisesOptions
-      );
-      setBodyParts(["all", ...bodyPartData]);
+    const fetchBodyPartData = async () => {
+      try {
+        const bodyPartData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+          exercisesOptions
+        );
+        setBodyParts(["all", ...bodyPartData]);
+      } catch (error) {
+        console.error("Error fetching body part data:", error);
+      }
     };
-    fetchExercisesData();
+
+    fetchBodyPartData();
   }, [setBodyPart]);
-  const handleClick = async (event) => {
-    if (
-      (event?.key === "Enter" || event === "searchButton") &&
-      search?.length > 0
-    ) {
-      if (search) {
+
+  const handleSearch = async () => {
+    if (search.length > 0) {
+      try {
         const exerciseData = await fetchData(
           "https://exercisedb.p.rapidapi.com/exercises",
           exercisesOptions
         );
-        const searchExercises = exerciseData.filter(
-          (exercise) =>
-            exercise.name.toLowerCase().includes(search) ||
-            exercise.target.toLowerCase().includes(search) ||
-            exercise.equipment.toLowerCase().includes(search) ||
-            exercise.bodyPart.toLowerCase().includes(search)
+
+        const searchExercises = exerciseData.filter((exercise) =>
+          [
+            exercise?.name?.toLowerCase(),
+            exercise?.target?.toLowerCase(),
+            exercise?.equipment?.toLowerCase(),
+            exercise?.bodyPart?.toLowerCase(),
+          ].some((item) => item.includes(search.toLowerCase()))
         );
+
         setSearch("");
         setExercises(searchExercises);
+      } catch (error) {
+        console.error("Error fetching exercise data:", error);
       }
     }
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
@@ -47,7 +62,7 @@ function Search({ setExercises, setBodyPart, bodyPart }) {
         mb="49px"
         textAlign="center"
       >
-        Awesome Exercises You <br /> Should Know
+        Awesome Exercises You Should Know
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
@@ -67,7 +82,7 @@ function Search({ setExercises, setBodyPart, bodyPart }) {
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
           placeholder="Search Exercises"
           type="text"
-          onKeyUp={handleClick}
+          onKeyUp={handleKeyPress}
         />
         <Button
           className="hover:text-black"
@@ -81,7 +96,7 @@ function Search({ setExercises, setBodyPart, bodyPart }) {
             right: "0px",
             fontSize: { lg: "20px", xs: "14px" },
           }}
-          onClick={() => handleClick("searchButton")}
+          onClick={handleSearch}
         >
           Search
         </Button>
@@ -92,7 +107,6 @@ function Search({ setExercises, setBodyPart, bodyPart }) {
       >
         <HorizontalScroll
           data={bodyParts}
-          bodyParts
           setBodyPart={setBodyPart}
           bodyPart={bodyPart}
         />
